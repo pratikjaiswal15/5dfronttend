@@ -1,0 +1,60 @@
+
+<h2>Add moment </h2>
+<div class="container-fluid">
+    <form [formGroup]="momentForm">
+        <div class="form-group">
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Comment</mat-label>
+                <textarea matInput formControlName="comment"> </textarea>
+            </mat-form-field>
+
+        </div>
+        <mat-label for="file">Upload a image</mat-label>
+
+
+        <br>
+        <br>
+        <div class="form-group">
+            <input 
+                formControlName="file"
+                id="file" 
+                type="file" 
+                class="form-control"
+                (change)="onFileChange($event)">
+            <div *ngIf="file?.touched && file?.invalid" class="alert alert-danger">
+                <div *ngIf="file?.errors?.required">File is required.</div>
+            </div>
+        </div>
+        
+
+        <mat-label>Add tags</mat-label>
+        <mat-form-field class="example-chip-list">
+            <mat-chip-list #chipList aria-label="tag selection">
+              <mat-chip *ngFor="let tag of tags" [selectable]="selectable"
+                       [removable]="removable" (removed)="remove(tag)">
+                {{tag}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input placeholder="New tag..."
+                     [matChipInputFor]="chipList"
+                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                     [matChipInputAddOnBlur]="addOnBlur"
+                     (matChipInputTokenEnd)="add($event)"
+                     >
+            </mat-chip-list>
+          </mat-form-field>
+
+          <button [disabled]="!momentForm.valid" type="submit" class="btn btn-primary" (click) ='add_moment(momentForm.value)'>Submit</button>
+
+    </form>
+
+    <br>
+    <br>
+    <button routerLink='/all-moments' routerDirection ="forward" class="btn btn-primary" >View all moments</button>
+    
+    <br>
+    <br>
+    <button (click) ="logout()"  class="btn btn-primary" >Logout</button>
+
+</div>
