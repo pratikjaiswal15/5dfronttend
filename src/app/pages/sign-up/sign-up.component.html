@@ -1,86 +1,125 @@
-<br>
-<h2>Heloo.Please register</h2>
-<div class="container-fluid">
 
-    <form [formGroup]="signUpForm">
-
-        <div class="form-group">
-    
-            <label>Enter your First name</label>
-            <input [class.is-invalid] = "first_name?.invalid && first_name?.touched" formControlName="first_name" type="text" class="form-control" placeholder="Enter your first name">
-
-            <div *ngIf= "first_name?.invalid && first_name?.touched">
-                    <small *ngIf = "first_name?.errors?.required"  class="text-danger"> First name is required</small>
-                    <small *ngIf = "first_name?.errors?.minlength" class="text-danger"> Enter valid first name </small>
-                    <small *ngIf = "first_name?.errors?.pattern" class="text-danger"> Enter valid first name </small>
-
-            </div>      
-
-        </div>
-
-        <div class="form-group">
-    
-            <label>Enter your Last name</label>
-            <input [class.is-invalid] = "last_name?.invalid && last_name?.touched" formControlName="last_name" type="text" class="form-control" placeholder="Enter your last name">
-
-            <div *ngIf= "last_name?.invalid && last_name?.touched">
-                    <small *ngIf = "last_name?.errors?.required"  class="text-danger"> Last name is required</small>
-                    <small *ngIf = "last_name?.errors?.minlength" class="text-danger"> Enter valid last name </small>
-                    <small *ngIf = "last_name?.errors?.pattern" class="text-danger"> Enter valid last name </small>
-
-            </div>      
-
-        </div>
+    <div class="jumbotron navbar-nav nav-fill w-100">
+        <img src="assets/imgaes/5d.png" class="img" width="50" height="10">
+    </div>
 
 
-        <div class="form-group">
-    
-            <label>Enter your Email</label>
-            <input [class.is-invalid] = "email?.invalid && email?.touched" formControlName="email" type="text" class="form-control" placeholder="Enter your email">
-
-            <div *ngIf= "email?.invalid && email?.touched">
-                    <small *ngIf = "email?.errors?.required"  class="text-danger"> Email is required</small>
-                    <small *ngIf = "email?.errors?.minlength" class="text-danger"> Enter valid email </small>
-                    <small *ngIf = "email?.errors?.pattern" class="text-danger"> Enter valid email </small>
-
-            </div>      
-
-        </div>
+    <h2 class="main">Sign Up</h2>
+    <h3 class="main">To be a member</h3>
 
 
-        <div class="form-group">
-    
-            <label>Enter your password</label>
-            <input [class.is-invalid] = "password?.invalid && password?.touched" formControlName="password" type="password" class="form-control" placeholder="Enter your password">
+    <div class="container-fluid">
 
-             <div *ngIf= "password?.invalid && password?.touched">
-                    <small *ngIf = "password?.errors?.required"  class="text-danger"> password is required</small>
-                    <small *ngIf = "password?.errors?.minlength" class="text-danger"> Password is of minimum 8 characters </small>
+        <form [formGroup]="signUpForm">
 
-            </div>      
+            <div class="form-row">
+                <div class="col">
 
-        </div>
+                    <div class="form-group">
 
-        <div class="form-group">
-    
-            <label>Enter your address</label>
-            <input [class.is-invalid] = "address?.invalid && address?.touched" formControlName="address" type="text" class="form-control" placeholder="Enter your address">
+                        <label>Enter your First name</label>
+                        <input [class.is-invalid]="first_name?.invalid && first_name?.touched"
+                            formControlName="first_name" type="text" class="form-control"
+                            placeholder="Enter your first name">
 
-            <div *ngIf= "address?.invalid && address?.touched">
-                    <small *ngIf = "address?.errors?.required"  class="text-danger"> address is required</small>
-                    <small *ngIf = "address?.errors?.minlength" class="text-danger"> Enter valid address </small>
-                    <small *ngIf = "address?.errors?.pattern" class="text-danger"> Enter valid address </small>
+                        <div *ngIf="first_name?.invalid && first_name?.touched">
+                            <small *ngIf="first_name?.errors?.required" class="text-danger"> First name is
+                                required</small>
+                            <small *ngIf="first_name?.errors?.minlength" class="text-danger"> Enter valid first name
+                            </small>
+                            <small *ngIf="first_name?.errors?.pattern" class="text-danger"> Enter valid first name
+                            </small>
 
-            </div>      
+                        </div>
 
-        </div>
+                    </div>
 
 
-        <button class="sign-in" [disabled]="!signUpForm.valid" type="submit" class="btn btn-primary" (click) = "signup(signUpForm.value)">Sign up</button>
+                </div>
 
-         
-    </form>     
+                <div class="col">
+                    <div class="form-group">
 
-    <a  routerLink="/sign-in">Alreay have an account?Login here</a>
+                        <label>Enter your Last name</label>
+                        <input [class.is-invalid]="last_name?.invalid && last_name?.touched" formControlName="last_name"
+                            type="text" class="form-control" placeholder="Enter your last name">
 
-</div>    
+                        <div *ngIf="last_name?.invalid && last_name?.touched">
+                            <small *ngIf="last_name?.errors?.required" class="text-danger"> Last name is
+                                required</small>
+                            <small *ngIf="last_name?.errors?.minlength" class="text-danger"> Enter valid last name
+                            </small>
+                            <small *ngIf="last_name?.errors?.pattern" class="text-danger"> Enter valid last name
+                            </small>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="form-row">
+                <div class="col">
+                    <div class="form-group">
+
+                        <label>Enter your Email</label>
+                        <input [class.is-invalid]="email?.invalid && email?.touched" formControlName="email" type="text"
+                            class="form-control" placeholder="Enter your email">
+
+                        <div *ngIf="email?.invalid && email?.touched">
+                            <small *ngIf="email?.errors?.required" class="text-danger"> Email is required</small>
+                            <small *ngIf="email?.errors?.minlength" class="text-danger"> Enter valid email </small>
+                            <small *ngIf="email?.errors?.pattern" class="text-danger"> Enter valid email </small>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+
+                    <div class="form-group">
+
+                        <label>Enter your password</label>
+                        <input [class.is-invalid]="password?.invalid && password?.touched" formControlName="password"
+                            type="password" class="form-control" placeholder="Enter your password">
+
+                        <div *ngIf="password?.invalid && password?.touched">
+                            <small *ngIf="password?.errors?.required" class="text-danger"> password is required</small>
+                            <small *ngIf="password?.errors?.minlength" class="text-danger"> Password is of minimum 8
+                                characters </small>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>Enter your address</label>
+                    <input [class.is-invalid]="address?.invalid && address?.touched" formControlName="address"
+                        type="text" class="form-control" placeholder="Enter your address">
+
+                    <div *ngIf="address?.invalid && address?.touched">
+                        <small *ngIf="address?.errors?.required" class="text-danger"> address is required</small>
+                        <small *ngIf="address?.errors?.minlength" class="text-danger"> Enter valid address </small>
+                        <small *ngIf="address?.errors?.pattern" class="text-danger"> Enter valid address </small>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit">
+                <button [disabled]="!signUpForm.valid" type="submit" class="btn btn-dark"
+                    (click)="signup(signUpForm.value)">Sign up</button>
+                <br>
+                <a routerLink="/sign-in">Alreay have an account?Login here</a>
+            </div>
+        </form>

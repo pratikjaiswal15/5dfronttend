@@ -10,6 +10,10 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatChipsModule} from '@angular/material/chips';
 import { DialogModule } from '../dialog/dialog.module';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -23,7 +27,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatSortModule,
     MatChipsModule,
     DialogModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatIconModule,
+    MatMenuModule,
+    MatSidenavModule
   ]
 })
 export class AllMomentsModule { }

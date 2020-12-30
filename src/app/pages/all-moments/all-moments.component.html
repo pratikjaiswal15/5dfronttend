@@ -1,4 +1,20 @@
-<h2>All moments</h2>
+<button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu" yPosition="above" xPosition="before" >
+  <button mat-menu-item routerLink='/all-moments'>
+    <mat-icon>arrow_right_alt</mat-icon>
+   <span>List of all moments</span>
+  </button>
+
+  <button mat-menu-item routerLink='/add-moment'>
+    <mat-icon>arrow_right_alt</mat-icon>
+    <span>Add a moment</span>
+  </button>
+</mat-menu>
+
+
+<h2>Moments</h2>
 <div class="example-container mat-elevation-z8">
     
     <div class="example-table-container">

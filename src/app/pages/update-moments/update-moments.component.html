@@ -23,7 +23,9 @@
               </mat-chip-list>
         </div>
 
-        <button [disabled]="!updateMform.valid" type="submit" class="btn btn-primary" (click) = "update(updateMform.value)">Update</button>
+        <div class="submit">
+            <button [disabled]="!updateMform.valid" type="submit" class="btn btn-dark" (click) = "update(updateMform.value)">Update</button>
+        </div>
 
     </form>
 </div>

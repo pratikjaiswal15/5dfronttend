@@ -17,7 +17,7 @@ export class AppComponent {
     
     this.authenticationService.authenticationState.subscribe(state => {
       if (state) {
-        this.router.navigate(['add-moment']);
+        this.router.navigate(['all-moments']);
       } else {
         this.router.navigate(['sign-up']);
       }
